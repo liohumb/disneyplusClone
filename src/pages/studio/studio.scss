@@ -1,0 +1,26 @@
+@use "src/Variables" as v;
+
+.studio {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  .section__title,
+  .slider,
+  .sliderAlt {
+    width: 90%;
+  }
+
+  &__containers {
+    padding: 30vw 0 10vw 0;
+  }
+
+  &__title {
+    position: sticky;
+    width: 100%;
+    font-size: 10rem;
+    color: v.$first-color-lighten;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}

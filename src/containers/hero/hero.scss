@@ -1,0 +1,21 @@
+@use "src/Variables" as v;
+
+.hero {
+
+  &__category {
+    width: 85%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: v.$gap;
+    padding: v.$biggest-dimension 0 0 0;
+
+    @media (max-width: 1024px) {
+      padding: v.$big-dimension 0 0 0;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

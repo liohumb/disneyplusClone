@@ -1,0 +1,24 @@
+@use "src/Variables" as v;
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  z-index: 2;
+  background: rgba(0, 0, 0, .75);
+  border-radius: .75rem;
+  cursor: zoom-out;
+
+  &__video {
+    width: 75%;
+    height: 75%;
+    border: none;
+    border-radius: .75rem;
+    z-index: 3;
+  }
+}

@@ -1,0 +1,50 @@
+@use "src/Variables" as v;
+
+.footer {
+  position: sticky;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background: v.$first-color-dark;
+  z-index: 2;
+  padding: v.$medium-dimension 0;
+
+  &__container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 v.$small-dimension;
+  }
+
+  &__logo {
+    &-image {
+      height: 7rem;
+      object-fit: cover;
+    }
+  }
+
+  &__menu {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: v.$gap;
+    padding: v.$medium-dimension 0;
+
+    &-link {
+      font-size: v.$small-size;
+      color: v.$first-color-lighten;
+    }
+  }
+
+  &__copyright {
+    font-size: v.$small-size;
+    color: v.$first-color-lighten;
+    padding: v.$medium-dimension 0;
+  }
+}

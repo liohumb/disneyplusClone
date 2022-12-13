@@ -1,0 +1,238 @@
+@use "src/Variables" as v;
+
+.movie {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  &__gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    z-index: 1;
+  }
+
+  &__background {
+    position: fixed;
+    width: 100%;
+    object-fit: cover;
+    opacity: .75;
+  }
+
+  &__containers {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    padding: 10vw 0;
+  }
+
+  &__container {
+    max-width: 768px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 5%;
+  }
+
+  &__title {
+    max-width: 300px;
+    font-size: 5rem;
+    text-align: center;
+    padding: v.$medium-dimension 0;
+  }
+
+  &__infos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: v.$smallest-gap;
+
+    &-restriction,
+    &-audio,
+    &-subtile {
+      height: 2rem;
+    }
+
+    &-year {
+      width: 2.75rem;
+      font-size: v.$small-size;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    &-span {
+      font-size: 2rem;
+    }
+
+    &-duration,
+    &-brand {
+      font-size: v.$small-size;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: v.$gap;
+    padding: v.$big-dimension 0;
+
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+    }
+
+    &-play {
+      width: 16rem;
+      height: 5.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: v.$small-gap;
+      background: v.$white-color;
+      border-radius: .5rem;
+      cursor: pointer;
+      transition: all .4s ease;
+
+      &--icon {
+        font-size: 3.2rem;
+      }
+
+      &--text {
+        font-size: v.$button-size;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+
+      &:hover {
+        background: rgba(249, 249, 249, 0.6);
+      }
+    }
+
+    &-trailer {
+      width: 20rem;
+      height: 5.6rem;
+      background: rgba(0, 0, 0, .6);
+      border: .2rem solid v.$white-color;
+      border-radius: .5rem;
+      font-size: v.$button-size;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: v.$white-color;
+      cursor: zoom-in;
+      transition: all .4s ease;
+
+      &:hover {
+        background: v.$white-color;
+        color: #000;
+      }
+    }
+
+    &-add,
+    &-group {
+      position: relative;
+      width: 4.4rem;
+      height: 4.4rem;
+      background: rgba(0, 0, 0, .6);
+      border: .2rem solid v.$white-color;
+      border-radius: 50%;
+      color: v.$white-color;
+      cursor: pointer;
+      transition: all .4s ease;
+
+      &--icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+      }
+
+      &:hover {
+        background: v.$white-color;
+        color: #000;
+      }
+
+    }
+  }
+
+  &__resume {
+    font-size: v.$title-size;
+  }
+
+  &__others {
+    width: 100%;
+    padding: v.$biggest-dimension 0;
+
+    &-titles {
+      position: relative;
+      width: 90%;
+      display: flex;
+      align-items: center;
+      gap: v.$big-gap;
+      margin: 0 auto;
+      padding: 0 0 v.$big-dimension 0;
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 33%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: .3rem;
+        background: rgba(249, 249, 249, 0.2);
+      }
+    }
+
+    &-title {
+      position: relative;
+      text-transform: uppercase;
+      letter-spacing: .1rem;
+      cursor: pointer;
+      transition: all .4s ease;
+
+      &:hover:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: .4rem;
+        background: v.$first-color-lighten;
+        border-radius: .5rem .5rem 0 0;
+      }
+    }
+
+    &-active {
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: .4rem;
+        background: v.$white-color;
+        border-radius: .5rem .5rem 0 0;
+      }
+    }
+  }
+
+  &__content {
+    .slider {
+      width: 90%;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@use "src/Variables" as v;
+
+.suggest {
+  &__container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__content {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+}

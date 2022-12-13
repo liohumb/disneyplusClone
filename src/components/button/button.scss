@@ -1,0 +1,55 @@
+@use "src/Variables" as v;
+
+.button {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background: v.$button-color;
+  border: .4rem solid v.$first-color-light;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1.9rem 3.8rem,
+              rgba(0, 0, 0, 0.22) 0 1.5rem 1.2rem;
+  padding: v.$small-dimension 0;
+  transition: all .4s ease;
+
+  @media (max-width: 768px) {
+    border: .1rem solid v.$first-color-light;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    border: .4rem solid v.$first-color-lighten;
+
+    @media (max-width: 768px) {
+      transform: scale(1.05);
+      border: .1rem solid v.$first-color-lighten;
+    }
+  }
+
+  &__logo {
+    width: 75%;
+    height: 75%;
+    object-fit: contain;
+    z-index: 1;
+
+    &-hover {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: none;
+      object-fit: cover;
+      border-radius: .5rem;
+      z-index: 0;
+
+      @media (max-width: 768px) {
+        border-radius: 1rem;
+      }
+    }
+  }
+
+  &:hover &__logo-hover {
+    display: block;
+  }
+}
