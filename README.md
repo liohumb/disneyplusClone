@@ -1,4 +1,4 @@
-# Disney+ Clone React App
+# Disney+ Clone React App (sans HOOKS)
 Un projet de clone de Disney+ avec des recherches de données à partir d'une API (Elorri)  
 
 Formation M2i
